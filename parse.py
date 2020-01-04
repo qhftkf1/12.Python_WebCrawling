@@ -11,18 +11,29 @@ from django_crawl.models import BlogData
 
 
 def parse_blog():
-    req = requests.get('https://beomi.github.io/beomi.github.io_old/')
+    # req = requests.get('https://beomi.github.io/beomi.github.io_old/')
+    # html = req.text
+    # soup = BeautifulSoup(html, 'html.parser')
+    # my_titles = soup.select(
+    #     'h3 > a'
+    #     )
+    req = requests.get('https://www.google.com/search?q=%ED%81%AC%EB%A1%A4%EB%9F%AC&rlz=1C1OKWM_enKR881KR881&oq=%ED%81%AC%EB%A1%A4%EB%9F%AC&aqs=chrome..69i57j0l4j69i61l3.2578j0j7&sourceid=chrome&ie=UTF-8')
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
-    my_titles = soup.select(
-        'h3 > a'
-        )
+    # div
+    my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
     data = {}
-    for title in my_titles:
+    for title in my_googles:
         data[title.text] = title.get('href')
     return data
 
 if __name__=='__main__':
     blog_data_dict = parse_blog()
     for t, l in blog_data_dict.items():
-        BlogData(title=t, link=l).save()
+        BlogData(title=t).save()
+
+
+# req = requests.get('https://www.google.com/search?q=%ED%81%AC%EB%A1%A4%EB%9F%AC&rlz=1C1OKWM_enKR881KR881&oq=%ED%81%AC%EB%A1%A4%EB%9F%AC&aqs=chrome..69i57j0l4j69i61l3.2578j0j7&sourceid=chrome&ie=UTF-8')
+# html = req.text
+# soup = BeautifulSoup(html, 'html.parser')
+# my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
