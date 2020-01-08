@@ -78,14 +78,24 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE' : 'django.db.backends.mysql',
+        # 'NAME' : 'my_db',
+        # 'USER' : 'root',
+        # 'PASSWORD' : '1234',
+        # 'HOST' : 'localhost',
+        # 'PORT' : '3306',
+        # 'OPTIONS': {
+        # 'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
+
         'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'my_db',
+        'NAME' : 'pknuboard',
         'USER' : 'root',
-        'PASSWORD' : '1234',
-        'HOST' : 'localhost',
+        'PASSWORD' : '8756',
+        'HOST' : '3.19.77.150',
         'PORT' : '3306',
         'OPTIONS': {
-        'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
+        # 'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        'charset': 'utf8mb4',
         }
     }
 }

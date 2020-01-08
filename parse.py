@@ -17,13 +17,21 @@ def parse_blog():
     # my_titles = soup.select(
     #     'h3 > a'
     #     )
-    req = requests.get('https://www.google.com/search?q=%ED%81%AC%EB%A1%A4%EB%9F%AC&rlz=1C1OKWM_enKR881KR881&oq=%ED%81%AC%EB%A1%A4%EB%9F%AC&aqs=chrome..69i57j0l4j69i61l3.2578j0j7&sourceid=chrome&ie=UTF-8')
+    # case google
+    # req = requests.get('https://www.google.com/search?q=%ED%81%AC%EB%A1%A4%EB%9F%AC&rlz=1C1OKWM_enKR881KR881&oq=%ED%81%AC%EB%A1%A4%EB%9F%AC&aqs=chrome..69i57j0l4j69i61l3.2578j0j7&sourceid=chrome&ie=UTF-8')
+    # html = req.text
+    # soup = BeautifulSoup(html, 'html.parser')
+    # # div
+    # my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
+
+    #case incruit
+    req = requests.get('http://job.incruit.com/jobdb_list/searchjob.asp?ct=1&ty=1&cd=150')
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
-    # div
-    my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
+    my_incruit = soup.find_all('span', {'class':'bold'})
+
     data = {}
-    for title in my_googles:
+    for title in my_incruit:
         data[title.text] = title.get('href')
     return data
 
