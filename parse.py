@@ -25,10 +25,10 @@ def parse_blog():
     # my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
 
     #case incruit
-    req = requests.get('http://job.incruit.com/jobdb_list/searchjob.asp?ct=1&ty=1&cd=150')
+    req = requests.get('http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005&p_sbsidx=2')
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
-    my_incruit = soup.find_all('span', {'class':'bold'})
+    my_incruit = soup.find_all('td', {'class':'title'})
 
     data = {}
     for title in my_incruit:
