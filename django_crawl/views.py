@@ -3,10 +3,11 @@ from django_crawl.models import BlogData
 
 # Create your views here.
 def index(request):
-    crawl_data = BlogData.objects.all().count()
-
+    crawl_data_count = BlogData.objects.all().count()
+    crawl_data_all = BlogData.objects.all()
     context = {
-        'num_data':crawl_data
+        'crawl_data_count':crawl_data_count,
+        'crawl_data_all':crawl_data_all,
     }
 
     return render(request, 'index.html', context=context)

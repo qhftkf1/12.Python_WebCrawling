@@ -1,0 +1,21 @@
+.pknu_board_frame{
+  width:100%;
+}
+.pknu_board_frame_title{
+  font-size: 50px;
+  text-align: center;
+  color: lightblue;
+}
+.pknu_board_frame_content{
+  width:100%;
+  padding-top: 50px;
+}
+.pknu_board_frame_content_text{
+  width:100%;
+  text-align: center;
+
+}
+.pknu_board_frame_content_text_data{
+  width:100%;
+  text-align: center;
+}
