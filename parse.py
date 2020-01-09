@@ -23,8 +23,8 @@ def parse_blog():
     # soup = BeautifulSoup(html, 'html.parser')
     # # div
     # my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
-
     #case incruit
+    BlogData.objects.all().delete()
     req = requests.get('http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005&p_sbsidx=2')
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
