@@ -3,10 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>PKNU_WEB_CRAWLING</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   </head>
   <body>
-    <div>
-      <h1> file_num : {{ num_data }}</h1>
+    <div class="pknu_board_frame">
+      <div class="pknu_board_frame_title">
+        PKNU-Board
+      </div>
+      <div class="pknu_board_frame_content">
+        <div class="pknu_board_frame_content_text">
+          {% for data in crawl_data_all %}
+          <div class="pknu_board_frame_content_text_data">
+            {{data.title}}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </body>
 </html>
