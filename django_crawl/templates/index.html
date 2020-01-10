@@ -12,6 +12,10 @@
         PKNU-Board
       </div>
       <div class="pknu_board_frame_content">
+
+        <div class="pknu_board_frame_content_delete">
+          <a href="{% url 'delete' %}"> delete </a>
+        </div>
         <div class="pknu_board_frame_content_text">
           {% for data in crawl_data_all %}
           <div class="pknu_board_frame_content_text_data">
