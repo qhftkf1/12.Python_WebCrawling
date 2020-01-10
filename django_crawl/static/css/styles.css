@@ -8,7 +8,12 @@
 }
 .pknu_board_frame_content{
   width:100%;
-  padding-top: 50px;
+  padding: 20px 0;
+  text-align: center;
+}
+.pknu_board_frame_content_delete{
+  text-align: center;
+
 }
 .pknu_board_frame_content_text{
   width:100%;
@@ -17,5 +22,6 @@
 }
 .pknu_board_frame_content_text_data{
   width:100%;
+  margin: 5px 0;
   text-align: center;
 }

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django_crawl.models import BlogData
+from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
@@ -11,3 +12,7 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+def delete(request):
+    BlogData.objects.all().delete()
+    return redirect('/')
