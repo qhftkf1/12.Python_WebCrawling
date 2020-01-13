@@ -86,8 +86,8 @@ DATABASES = {
         'HOST' : '3.19.77.150',
         'PORT' : '3306',
         'OPTIONS': {
-        # 'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
-        'charset': 'utf8mb4',
+        'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        # 'charset': 'utf8mb4',
         }
     }
 }
