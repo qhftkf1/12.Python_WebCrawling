@@ -24,20 +24,42 @@ def parse_blog():
     # # div
     # my_googles = soup.find_all('div', {'class':'BNeawe vvjwJb AP7Wnd'})
     #case incruit
-    req = requests.get('http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005&p_sbsidx=2')
+    #http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005
+    #http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005&p_sbsidx=2
+    #http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005
+    # https://www.onoffmix.com/event/main/?c=092
+    #https://www.onoffmix.com/event/main/?c=087
+    # think
+    # https://www.thinkcontest.com/Contest/CateField.html?c=12
+    # https://www.wevity.com/?c=find&s=1&gub=1&cidx=21
+    req = requests.get('http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005')
+    #print(req.text)
     html = req.text
+    #file = open('data1.txt', 'w', encoding = 'utf-8')
+    #file.write(html)
+    #file.close()
     soup = BeautifulSoup(html, 'html.parser')
+    #print(soup)
     my_incruit = soup.find_all('td', {'class':'title'})
+    #print(my_incruit)
+    # my_incruit_date = soup.find_all('td', {'class' : 'date'})
 
     data = {}
     for title in my_incruit:
+        # print(data)
         data[title.text] = title.get('href')
     return data
+
+
 
 if __name__=='__main__':
     blog_data_dict = parse_blog()
     for t, l in blog_data_dict.items():
-        BlogData(title=t).save()
+        try:
+            BlogData(title=t).save()
+        except:
+            print("error")
+            pass
 
 
 # req = requests.get('https://www.google.com/search?q=%ED%81%AC%EB%A1%A4%EB%9F%AC&rlz=1C1OKWM_enKR881KR881&oq=%ED%81%AC%EB%A1%A4%EB%9F%AC&aqs=chrome..69i57j0l4j69i61l3.2578j0j7&sourceid=chrome&ie=UTF-8')
