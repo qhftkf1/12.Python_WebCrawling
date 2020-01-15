@@ -5,6 +5,7 @@
     <title>PKNU_WEB_CRAWLING</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   </head>
   <body>
     <div class="pknu_board_frame">
@@ -13,10 +14,57 @@
       </div>
       <div class="pknu_board_frame_content">
 
-        <div class="pknu_board_frame_content_delete">
-          <a href="{% url 'delete' %}"> delete </a>
-        </div>
+
         <div class="pknu_board_frame_content_text">
+          <div class="pknu_board_frame_content_button row row_margin_zero">
+            <div class="col-xs-2 col-sm-2">
+              <div class="button_frame board_color">
+                <div class="button_center">
+                  <a class="color_white font_weight_bold" href=""> BOARD </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-sm-2">
+              <div class="button_frame job_color">
+                <div class="button_center">
+                  <a class="color_white font_weight_bold" href=""> JOB </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-sm-2">
+              <div class="button_frame cs_color">
+                <div class="button_center">
+                  <a class="color_white font_weight_bold" href=""> CS </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-sm-2">
+              <div class="button_frame eofs_color">
+                <div class="button_center">
+                  <a class="color_white font_weight_bold" href=""> EOFS </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-sm-2">
+              <div class="button_frame find_color">
+                <div class="button_center">
+                  <a class="color_white font_weight_bold" href=""> FIND </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-sm-2">
+              <div class="button_frame delete_color">
+                <div class="button_center">
+                  <a class="color_white font_weight_bold" href="{% url 'delete' %}"> DELETE </a>
+                </div>
+              </div>
+            </div>
+          </div>
           {% for data in crawl_data_all %}
           <div class="pknu_board_frame_content_text_data">
             {{data.title}}

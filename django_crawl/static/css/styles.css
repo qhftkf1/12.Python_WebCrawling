@@ -1,27 +1,106 @@
+html, body{
+  height: 100%;
+}
 .pknu_board_frame{
   width:100%;
+  height: 100%;
 }
 .pknu_board_frame_title{
   font-size: 50px;
   text-align: center;
-  color: lightblue;
+  background-color: #3282b8;
+  color: white;
+  font-family: cursive;
 }
 .pknu_board_frame_content{
   width:100%;
+  height: 100%;
   padding: 20px 0;
   text-align: center;
+  background-color: #3282b8;
 }
-.pknu_board_frame_content_delete{
+.pknu_board_frame_content_button{
   text-align: center;
+  padding: 20px 0px;
+}
+.button_frame{
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  margin: auto;
+}
 
+/* button color */
+.board_color{
+  background-color: #550a46;
+}
+.job_color{
+  background-color: #4a69bb;
+}
+.cs_color{
+  background-color: #617be3;
+}
+.eofs_color{
+  background-color: #9aceff;
+}
+.find_color{
+  background-color: #e7a4e4;
+}
+.delete_color{
+  background-color: #ffc55c;
+}
+
+
+
+.button_center{
+  padding: 30px 0px;
 }
 .pknu_board_frame_content_text{
-  width:100%;
+  width:70%;
   text-align: center;
+  margin: auto;
+  background-color: white;
 
 }
 .pknu_board_frame_content_text_data{
   width:100%;
-  margin: 5px 0;
+  margin: 10px 0;
   text-align: center;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+.row_margin_zero{
+  margin: 0px!important;
+}
+.color_white{
+  color:white;
+}
+.font_weight_bold{
+  font-weight: bold;
+}
+@media (max-width: 770px) {
+
+  .button_frame{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin: auto;
+  }
+
+ .button_center{
+   padding: 15px 0px;
+ }
+ .font_weight_bold{
+   font-weight: bold;
+   font-size:12px;
+ }
+ .pknu_board_frame_content_text_data{
+   width:100%;
+   margin: 10px 0;
+   text-align: center;
+   font-size: 10px;
+   font-family: monospace;
+ }
+
 }
