@@ -79,6 +79,13 @@ html, body{
 .font_weight_bold{
   font-weight: bold;
 }
+.overflow_y{
+  overflow-y: scroll;
+
+}
+::-webkit-scrollbar {
+  display: none !important; // 윈도우 크롬 등
+}
 @media (max-width: 770px) {
 
   .button_frame{
