@@ -1,83 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>PKNU_WEB_CRAWLING</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="pknu_board_frame">
-      <div class="pknu_board_frame_title">
-        Uni-DamoAh
 
-      </div>
-      <div class="pknu_board_frame_title_small">
-        : 당신의 학교에 대한 모든 것
-      </div>
-      <div class="pknu_board_frame_content ">
+{% extends 'base_frame.html' %}
 
-
-        <div class="pknu_board_frame_content_text ">
-          <div class="pknu_board_frame_content_button row row_margin_zero ">
-            <div class="col-xs-2 col-sm-2">
-              <div class="button_frame board_color">
-                <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 게시판 </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-2 col-sm-2">
-              <div class="button_frame job_color">
-                <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 인재개발원 </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-2 col-sm-2">
-              <div class="button_frame cs_color">
-                <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 컴퓨터 공학 </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-2 col-sm-2">
-              <div class="button_frame eofs_color">
-                <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 미래교육부 </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-2 col-sm-2">
-              <div class="button_frame find_color">
-                <div class="button_center">
-                  <a class="color_white font_weight_bold" href="{% url 'find' %}"> FIND </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xs-2 col-sm-2">
-              <div class="button_frame delete_color">
-                <div class="button_center">
-                  <a class="color_white font_weight_bold" href="{% url 'delete' %}"> DELETE </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pknu_board_frame_content_text_area overflow_y">
-            {% for data in crawl_data_all %}
-            <div class="pknu_board_frame_content_text_data ">
-              <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+{% block content %}
+{% for data in crawl_data_all %}
+<div class="pknu_board_frame_content_text_data ">
+  <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
+</div>
+{% endfor %}
+{% endblock %}
