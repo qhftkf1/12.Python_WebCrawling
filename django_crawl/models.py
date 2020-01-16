@@ -6,3 +6,6 @@ class BlogData(models.Model):
     date = models.CharField(max_length=200, null=True, default='')
     tag = models.CharField(max_length=200, null=False, default='')
     link = models.URLField()
+
+    def __str__(self):
+        return self.title

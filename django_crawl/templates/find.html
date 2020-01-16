@@ -70,11 +70,12 @@
             </div>
           </div>
           <div class="pknu_board_frame_content_text_area overflow_y">
-            {% for data in crawl_data_all %}
-            <div class="pknu_board_frame_content_text_data ">
-              <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
+            <div class="pknu_board_frame_content_text_area_search">
+              <input type="text" name="tag" value="">
             </div>
-            {% endfor %}
+            <div class="pknu_board_frame_content_text_area_result">
+
+            </div>
           </div>
         </div>
       </div>
