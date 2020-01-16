@@ -15,15 +15,15 @@
       <div class="pknu_board_frame_title_small">
         : 당신의 학교에 대한 모든 것
       </div>
-      <div class="pknu_board_frame_content overflow_y">
+      <div class="pknu_board_frame_content ">
 
 
-        <div class="pknu_board_frame_content_text">
-          <div class="pknu_board_frame_content_button row row_margin_zero">
+        <div class="pknu_board_frame_content_text ">
+          <div class="pknu_board_frame_content_button row row_margin_zero ">
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame board_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> BOARD </a>
+                  <a class="color_white font_weight_bold" href=""> 게시판 </a>
                 </div>
               </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame job_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> JOB </a>
+                  <a class="color_white font_weight_bold" href=""> 인재개발원 </a>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame cs_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> CS </a>
+                  <a class="color_white font_weight_bold" href=""> 컴퓨터 공학 </a>
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame eofs_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> EOFS </a>
+                  <a class="color_white font_weight_bold" href=""> 미래교육부 </a>
                 </div>
               </div>
             </div>
@@ -68,11 +68,13 @@
               </div>
             </div>
           </div>
-          {% for data in crawl_data_all %}
-          <div class="pknu_board_frame_content_text_data">
-            {{data.title}}
+          <div class="pknu_board_frame_content_text_area overflow_y">
+            {% for data in crawl_data_all %}
+            <div class="pknu_board_frame_content_text_data ">
+              <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>

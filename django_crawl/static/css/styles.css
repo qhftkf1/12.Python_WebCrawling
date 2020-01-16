@@ -2,6 +2,7 @@ html, body{
   height: 100%;
 }
 .pknu_board_frame{
+  background-color: #3282b8;
   width:100%;
   height: 100%;
 }
@@ -21,7 +22,7 @@ html, body{
 }
 .pknu_board_frame_content{
   width:100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 20px 0;
   text-align: center;
   background-color: #3282b8;
@@ -69,6 +70,9 @@ html, body{
   background-color: white;
 
 }
+.pknu_board_frame_content_text_area{
+  height: 270px;
+}
 .pknu_board_frame_content_text_data{
   width:100%;
   margin: 10px 0;
@@ -109,6 +113,7 @@ html, body{
    font-weight: bold;
    font-size:12px;
  }
+
  .pknu_board_frame_content_text_data{
    width:100%;
    margin: 10px 0;
