@@ -34,12 +34,12 @@ def job(request):
         'crawl_data_job':crawl_data_job,
     }
     return render(request, 'job_page.html', context=context)
-def future(request):
-    crawl_data_future = BlogData.objects.filter(tag="future")
+def link(request):
+    crawl_data_link = BlogData.objects.filter(tag="link")
     context = {
-        'crawl_data_future':crawl_data_future,
+        'crawl_data_link':crawl_data_link,
     }
-    return render(request, 'future_page.html', context=context)
+    return render(request, 'link_page.html', context=context)
 def pknu(request):
     crawl_data_pknu = BlogData.objects.filter(tag="pknu")
     context = {
