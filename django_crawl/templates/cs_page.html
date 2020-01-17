@@ -1,0 +1,10 @@
+
+{% extends 'base_frame.html' %}
+
+{% block content %}
+{% for data in crawl_data_cs %}
+<div class="pknu_board_frame_content_text_data ">
+  <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
+</div>
+{% endfor %}
+{% endblock %}

@@ -2,12 +2,20 @@
 {% extends 'base_frame.html' %}
 
 {% block content %}
-{% for data in crawl_data_all %}
+
 <div class="pknu_board_frame_content_text_area_search">
-  <input type="text" name="tag" value="">
+  <form class="" action="" method="get">
+    {% csrf_token %}
+    <label for="search" class="label_search"> Keyword </label>
+    <input id="search"type="text" name="search_instance" value={{form}}>
+  </form>
 </div>
-<div class="pknu_board_frame_content_text_area_result">
-  <a href="{% url 'find_new' %}"><span class="glyphicon glyphicon-plus"></span></a>
+<div class="pknu_board_frame_content_text_area_result overflow_y">
+  {% for data in crawl_search_data %}
+  <div class="pknu_board_frame_content_text_area_result_list">
+     {{ data }}
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}

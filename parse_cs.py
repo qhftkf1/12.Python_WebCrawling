@@ -12,7 +12,7 @@ from django_crawl.models import BlogData
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def parse_blog():
-    html_url = 'http://cms.pknu.ac.kr/pknujob/view.do?no=2342'
+    html_url = 'http://cms.pknu.ac.kr/ced/view.do?no=11084'
     req = requests.get(html_url)
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
@@ -28,4 +28,4 @@ def parse_blog():
 if __name__=='__main__':
     blog_data_dict = parse_blog()
     for t, l in blog_data_dict.items():
-        BlogData(title=t, link=l[0], tag='job_general', date=l[1]).save()
+        BlogData(title=t, link=l[0], tag='cs', date=l[1]).save()

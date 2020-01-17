@@ -12,20 +12,27 @@ from django_crawl.models import BlogData
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def parse_blog():
-    html_url = 'http://cms.pknu.ac.kr/pknujob/view.do?no=2342'
+    html_url = 'http://www.pknu.ac.kr/usrBoardActn.do?p_bm_idx=5&p_boardcode=PK10000005&p_sbsidx=2'
     req = requests.get(html_url)
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
-    my_titles = soup.find('ul', {'id' : 'board_list'})
-    my_titles = my_titles.select(
-        'li > a'
+    # my_titles = soup.find('ul', {'id' : 'board_list'})
+    #contents > div.contents-inner > form:nth-child(3) > table > tbody > tr:nth-child(4)
+    my_titles = soup.select(
+        'div > form > table > tbody > tr'
         )
+    print(my_titles)
+    #contents > div.contents-inner > form:nth-child(3) > table > tbody > tr:nth-child(4) > td.title > strong > a
     data = {}
     for title in my_titles:
-        data[title.find("h4").text] = [title.get('href'), title.find('span',{'class' : 'date'}).text]
+        temp = title.find('td', {'class' : 'title'}).text
+        print(temp)
+        print(title.find('a').get('href'))
+        print(title.find('td', {'class' : 'date'}))
+        data[temp] = [title.find('a').get('href'), title.find('td',{'class' : 'date'}).text]
     return data
 
 if __name__=='__main__':
     blog_data_dict = parse_blog()
     for t, l in blog_data_dict.items():
-        BlogData(title=t, link=l[0], tag='job_general', date=l[1]).save()
+        BlogData(title=t, link=l[0], tag='pknu', date=l[1]).save()

@@ -11,7 +11,7 @@
   <body>
     <div class="pknu_board_frame">
       <div class="pknu_board_frame_title">
-        Uni-DamoAh
+      <a class ="title_white"href="{% url 'index' %}">  Uni-DamoAh</a>
 
       </div>
       <div class="pknu_board_frame_title_small">
@@ -25,7 +25,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame board_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 게시판 </a>
+                  <a class="color_white font_weight_bold" href="{% url 'pknu' %}"> 게시판 </a>
                 </div>
               </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame job_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 인재개발원 </a>
+                  <a class="color_white font_weight_bold" href="{% url 'job' %}"> 인재개발원 </a>
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame cs_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 컴퓨터 공학 </a>
+                  <a class="color_white font_weight_bold" href="{% url 'cs' %}"> 컴퓨터공학 </a>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="col-xs-2 col-sm-2">
               <div class="button_frame eofs_color">
                 <div class="button_center">
-                  <a class="color_white font_weight_bold" href=""> 미래교육부 </a>
+                  <a class="color_white font_weight_bold" href="{% url 'future' %}"> 미래교육부 </a>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
           </div>
           <div class="pknu_board_frame_content_text_area overflow_y">
             {% block content%}
-        
+
             {% endblock %}
           </div>
         </div>
