@@ -1,4 +1,5 @@
 from django.db import models
+from .elastic_search_connection import TextIndex
 
 # Create your models here.
 class BlogData(models.Model):
@@ -9,3 +10,17 @@ class BlogData(models.Model):
 
     def __str__(self):
         return self.title
+
+        # indexing method of Question model
+    # def indexing(self):
+    #    obj = TextIndex(
+    #         meta = {
+    #             'id':self.id
+    #         },
+    #         title = self.title,
+    #         date = self.date,
+    #         tag = self.tag,
+    #         link = self.link
+    #    )
+    #    obj.save()
+    #    return obj.to_dict(include_meta=True)

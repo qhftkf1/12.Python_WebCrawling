@@ -2,9 +2,84 @@
 {% extends 'base_frame.html' %}
 
 {% block content %}
-{% for data in crawl_data_all %}
-<div class="pknu_board_frame_content_text_data ">
-  <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
-</div>
-{% endfor %}
+
+  <div class="row row_half row_margin_zero">
+    <div class="col-sm-4 col-md-4 board_page ">
+      <div class="page_frame">
+        <div class="page_title">
+          <div class="title">
+            PKNU_BOARD
+          </div>
+        </div>
+        <div class="page_content">
+
+        </div>
+      </div>
+    </div>
+      <div class="col-sm-4 col-md-4 board_page">
+        <div class="page_frame">
+          <div class="page_title">
+            <div class="title">
+              PKNU_BOARD
+            </div>
+          </div>
+          <div class="page_content">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4 board_page">
+        <div class="page_frame">
+          <div class="page_title">
+            <div class="title">
+              PKNU_BOARD
+            </div>
+          </div>
+          <div class="page_content">
+
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row row_half row_margin_zero">
+      <div class="col-sm-4 board_page">
+        <div class="page_frame">
+          <div class="page_title">
+            <div class="title">
+              PKNU_BOARD
+            </div>
+          </div>
+          <div class="page_content">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 board_page">
+        <div class="page_frame">
+          <div class="page_title">
+            <div class="title">
+              PKNU_BOARD
+            </div>
+          </div>
+          <div class="page_content">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 board_page">
+        <div class="page_frame">
+          <div class="page_title">
+            <div class="title">
+              PKNU_BOARD
+            </div>
+          </div>
+          <div class="page_content">
+
+          </div>
+        </div>
+      </div>
+  </div>
+
 {% endblock %}
