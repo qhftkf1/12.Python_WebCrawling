@@ -9,14 +9,14 @@ html, body{
 .pknu_board_frame_title{
   font-size: 50px;
   text-align: center;
-  background-color: #3282b8;
+  /* background-color: #3282b8; */
   color: white!important;
   font-family: cursive;
 }
 .pknu_board_frame_title_small{
   font-size: 17px;
   text-align: center;
-  background-color: #3282b8;
+  /* background-color: #3282b8; */
   color: white;
   font-family: cursive;
 }
@@ -25,7 +25,7 @@ html, body{
   /* height: 100%; */
   padding: 20px 0;
   text-align: center;
-  background-color: #3282b8;
+  /* background-color: #3282b8; */
 }
 .pknu_board_frame_content_button{
   text-align: center;
@@ -111,7 +111,7 @@ html, body{
   width: 80%;
   border: 1px solid #0000002b;
   margin: 20px auto;
-  height: 80%;
+  height: 75%;
 
 }
 .pknu_board_frame_content_text_area_result_list{
@@ -144,12 +144,19 @@ html, body{
   height: 100%;
   border: 1px solid grey
 }
+.page_content{
+  height: 90%;
+}
 .title{
   padding-left: 20px;
   text-align: initial;
   font-size: 20px;
   font-family: monospace;
   font-weight: bold;
+}
+#myChart{
+  width: 200px;
+  height: 200px!important;
 }
 @media (max-width: 770px) {
 

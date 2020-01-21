@@ -20,10 +20,31 @@ def index(request):
     crawl_data_count = BlogData.objects.all().count()
     crawl_data_all = BlogData.objects.all()
     crawl_data_job = BlogData.objects.filter(tag="job_general")
+    crawl_data_pknu = BlogData.objects.filter(tag="pknu")
+    crawl_data_link = BlogData.objects.filter(tag="link")
+    crawl_data_cs = BlogData.objects.filter(tag="cs")
+
+    crawl_data_job_count = BlogData.objects.filter(tag="job_general").count()
+    crawl_data_pknu_count = BlogData.objects.filter(tag="pknu").count()
+    crawl_data_link_count = BlogData.objects.filter(tag="link").count()
+    crawl_data_cs_count = BlogData.objects.filter(tag="cs").count()
+    # crawl_search_data =BlogData.objects.filter(title__contains=form)
+    if request.GET.get('search_instance'):
+        form = request.GET.get('search_instance')
+        crawl_search_data =BlogData.objects.filter(title__contains=form)
+
     context = {
         'crawl_data_count':crawl_data_count,
         'crawl_data_all':crawl_data_all,
         'crawl_data_job':crawl_data_job,
+        'crawl_data_pknu':crawl_data_pknu,
+        'crawl_data_link':crawl_data_link,
+        'crawl_data_cs':crawl_data_cs,
+        'crawl_data_job_count' : crawl_data_job_count,
+        'crawl_data_pknu_count' : crawl_data_pknu_count,
+        'crawl_data_link_count' : crawl_data_link_count,
+        'crawl_data_cs_count' : crawl_data_cs_count,
+        'crawl_search_data':crawl_search_data,
     }
 
     return render(request, 'index.html', context=context)
@@ -41,7 +62,7 @@ def link(request):
     }
     return render(request, 'link_page.html', context=context)
 def pknu(request):
-    crawl_data_pknu = BlogData.objects.filter(tag="pknu")
+
     context = {
         'crawl_data_pknu':crawl_data_pknu,
     }
