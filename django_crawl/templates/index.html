@@ -40,7 +40,7 @@
         <div class="page_frame">
           <div class="page_title">
             <div class="title">
-              search
+              Search
             </div>
           </div>
           <div class="page_content">
@@ -54,7 +54,7 @@
             <div class="pknu_board_frame_content_text_area_result overflow_y">
               {% for data in crawl_search_data %}
               <div class="pknu_board_frame_content_text_area_result_list">
-                 {{ data }}
+                   <a href = "https://cms.pknu.ac.kr{{data.link}}">{{data.title}}</a>
               </div>
               {% endfor %}
             </div>
@@ -133,10 +133,10 @@
                 {{crawl_data_job_count}},
               ],
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
 
               ],
               borderColor: [
@@ -144,8 +144,7 @@
                   'rgba(54, 162, 235, 1)',
                   'rgba(255, 206, 86, 1)',
                   'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
+
               ],
               borderWidth: 1
           }]

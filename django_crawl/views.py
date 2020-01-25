@@ -29,10 +29,6 @@ def index(request):
     crawl_data_link_count = BlogData.objects.filter(tag="link").count()
     crawl_data_cs_count = BlogData.objects.filter(tag="cs").count()
     # crawl_search_data =BlogData.objects.filter(title__contains=form)
-    if request.GET.get('search_instance'):
-        form = request.GET.get('search_instance')
-        crawl_search_data =BlogData.objects.filter(title__contains=form)
-
     context = {
         'crawl_data_count':crawl_data_count,
         'crawl_data_all':crawl_data_all,
@@ -44,10 +40,14 @@ def index(request):
         'crawl_data_pknu_count' : crawl_data_pknu_count,
         'crawl_data_link_count' : crawl_data_link_count,
         'crawl_data_cs_count' : crawl_data_cs_count,
-        'crawl_search_data':crawl_search_data,
     }
-
-    return render(request, 'index.html', context=context)
+    if request.GET.get('search_instance'):
+        form = request.GET.get('search_instance')
+        crawl_search_data =BlogData.objects.filter(title__contains=form)
+        context['crawl_search_data'] = crawl_search_data
+        return render(request, 'index.html', context=context)
+    else:
+        return render(request, 'index.html', context=context)
 
 def job(request):
     crawl_data_job = BlogData.objects.filter(tag="job_general")

@@ -2,7 +2,7 @@ html, body{
   height: 100%;
 }
 .pknu_board_frame{
-  background-color: #3282b8;
+  background-color: #012873;
   width:100%;
   height: 100%;
 }
@@ -14,16 +14,16 @@ html, body{
   font-family: cursive;
 }
 .pknu_board_frame_title_small{
-  font-size: 17px;
+  font-size: 20px;
   text-align: center;
   /* background-color: #3282b8; */
   color: white;
-  font-family: cursive;
+  font-family: NanumSquare_acB;
 }
 .pknu_board_frame_content{
   width:100%;
   /* height: 100%; */
-  padding: 20px 0;
+  /* padding: 20px 0; */
   text-align: center;
   /* background-color: #3282b8; */
 }
@@ -69,7 +69,7 @@ html, body{
   width:98%;
   text-align: center;
   margin: auto;
-  background-color: white;
+  background-color: #012873;
 
 }
 .pknu_board_frame_content_text_area{
@@ -79,8 +79,8 @@ html, body{
   width:100%;
   margin: 10px 0;
   text-align: center;
-  font-size: 20px;
-  font-family: monospace;
+  font-size: 14px;
+  font-family: NanumSquare_acB;
 }
 
 .row_margin_zero{
@@ -105,12 +105,12 @@ html, body{
 
 /*  */
 .pknu_board_frame_content_text_area_search{
-
+  margin: 10px 0px;
 }
 .pknu_board_frame_content_text_area_result{
-  width: 80%;
+  width: 95%;
   border: 1px solid #0000002b;
-  margin: 20px auto;
+  margin: 10px auto;
   height: 75%;
 
 }
@@ -120,7 +120,7 @@ html, body{
 .label_search{
   margin: 0px 10px;
   font-size: 18px;
-  font-family: monospace;
+  font-family: NanumSquare_acB;
   font-weight: 400;
   color: #656161;
 }
@@ -137,12 +137,16 @@ html, body{
 }
 .page_title{
   height: 10%;
+  padding: 4px 0px;
+  border-bottom: 1px solid lightgrey;
   /* background-color: grey; */
 }
 .page_frame{
   /* margin: 5px; */
+  background-color: white;
   height: 100%;
-  border: 1px solid grey
+  border: 1px solid grey;
+  border-radius: 10px;
 }
 .page_content{
   height: 90%;
@@ -150,13 +154,26 @@ html, body{
 .title{
   padding-left: 20px;
   text-align: initial;
-  font-size: 20px;
-  font-family: monospace;
+  font-size: 16px;
+  font-family: NanumSquare_acEB;
   font-weight: bold;
 }
 #myChart{
   width: 200px;
-  height: 200px!important;
+  height: 230px!important;
+  /* margin: 20px 0px; */
+}
+@font-face {
+  font-family: NanumSquare_acB;
+  src: url('./fonts/NanumSquare_acB.ttf');
+}
+@font-face {
+  font-family: NanumSquare_acR;
+  src: url('./fonts/NanumSquare_acR.ttf');
+}
+@font-face {
+  font-family: NanumSquare_acEB;
+  src: url('./fonts/NanumSquare_acEB.ttf');
 }
 @media (max-width: 770px) {
 
