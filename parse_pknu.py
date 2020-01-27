@@ -21,14 +21,10 @@ def parse_blog():
     my_titles = soup.select(
         'div > form > table > tbody > tr'
         )
-    print(my_titles)
     #contents > div.contents-inner > form:nth-child(3) > table > tbody > tr:nth-child(4) > td.title > strong > a
     data = {}
     for title in my_titles:
         temp = title.find('td', {'class' : 'title'}).text
-        print(temp)
-        print(title.find('a').get('href'))
-        print(title.find('td', {'class' : 'date'}))
         data[temp] = [title.find('a').get('href'), title.find('td',{'class' : 'date'}).text]
     return data
 
