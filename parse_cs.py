@@ -28,4 +28,7 @@ def parse_blog():
 if __name__=='__main__':
     blog_data_dict = parse_blog()
     for t, l in blog_data_dict.items():
+        try:
         BlogData(title=t, link=l[0], tag='cs', date=l[1]).save()
+        except:
+            pass
