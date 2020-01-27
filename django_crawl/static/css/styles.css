@@ -55,9 +55,11 @@ html, body{
   background-color: #e7a4e4;
 }
 .delete_color{
-  background-color: #ffc55c;
+  background-color: #9e9b96;
 }
-
+.delete_container{
+  border: 2px solid white!important;
+}
 .title_white{
   color:white!important;
 }
